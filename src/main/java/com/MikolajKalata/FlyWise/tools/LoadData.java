@@ -35,7 +35,7 @@ public class LoadData implements ApplicationRunner {
 
         for (int i = 0; i < 5; i++) {
 
-            Flight flight = new Flight(num++, "SEA", "GDA", ZonedDateTime.now());
+            Flight flight = new Flight(num++, "SEA", "GDN", ZonedDateTime.now());
             Cargo cargo = new Cargo();
             cargo.getCargoes().add(new Cargoes(w1++, "kg", w2++, cargo));
             cargo.getCargoes().add(new Cargoes(w3++, "lb", w2++, cargo));

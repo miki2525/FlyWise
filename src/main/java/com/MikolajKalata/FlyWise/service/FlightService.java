@@ -32,6 +32,10 @@ public class FlightService {
         return flightRepository.findAll();
     }
 
+    public void clearAll(){
+        flightRepository.deleteAll();
+    }
+
     public Flight saveFlight(Flight flight){
         return flightRepository.save(flight);
     }

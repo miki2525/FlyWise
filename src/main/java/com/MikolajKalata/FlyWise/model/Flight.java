@@ -26,7 +26,7 @@ public class Flight {
 
 //    private ZonedDateTime arrivalDate;
 
-    @OneToOne(mappedBy = "flight")
+    @OneToOne(mappedBy = "flight", cascade = CascadeType.ALL)
     @PrimaryKeyJoinColumn
     private Cargo cargo;
 

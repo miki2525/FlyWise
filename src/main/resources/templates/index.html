@@ -3,15 +3,15 @@
 <script>
 window.onload = function () {
 
-    document.getElementById("submit").addEventListener("click", findFlight)
+    document.getElementById("submit").addEventListener("click", getWeightDetails)
 
-    function findFlight() {
+    function getWeightDetails() {
 
         var flightNum = document.getElementById("flightNum").value;
         var dateStr = document.getElementById("dateStr").value;
 
         var xhttp = new XMLHttpRequest();
-        xhttp.open("POST", "/findFlight", true);
+        xhttp.open("POST", "/getWeightDetails", true);
         xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
         xhttp.send("dateStr=" + dateStr + "&flightNum=" + flightNum);
         xhttp.onreadystatechange = function () {

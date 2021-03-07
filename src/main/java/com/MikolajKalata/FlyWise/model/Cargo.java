@@ -1,6 +1,7 @@
 package com.MikolajKalata.FlyWise.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.hibernate.annotations.Proxy;
 
 import javax.persistence.*;
 import java.util.ArrayList;
