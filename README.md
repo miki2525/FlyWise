@@ -10,4 +10,8 @@ b.	Number of flights arriving to this airport,
 c.	Total number (pieces) of baggage arriving to this airport,
 d.	Total number (pieces) of baggage departing from this airport.
 
+
+JAVA + SPRING + JPA + TESTS
+JS + CSS
+
 https://flywise.herokuapp.com
