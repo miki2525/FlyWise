@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<script>
+window.onload = function () {
+
+    document.getElementById("submit").addEventListener("click", findFlight)
+
+    function findFlight() {
+
+        var flightNum = document.getElementById("flightNum").value;
+        var dateStr = document.getElementById("dateStr").value;
+
+        var xhttp = new XMLHttpRequest();
+        xhttp.open("POST", "/findFlight", true);
+        xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        xhttp.send("dateStr=" + dateStr + "&flightNum=" + flightNum);
+        xhttp.onreadystatechange = function () {
+            if (this.status == 200 && this.readyState == 4) {
+                document.body.innerHTML = this.responseText;
+            } else {
+                console.log("WAITNG....")
+            }
+        }
+
+    }
+}
+
+</script>
+<head>
+    <meta charset="UTF-8">
+    <title>FlyWise</title>
+</head>
+<body>
+<form>
+
+    <label for="flightNum">Provide the Flight Number: </label>
+    <input type="text" id="flightNum">
+    <label for="dateStr">Select the flight date</label>
+    <input type="date" id="dateStr">
+
+    <input type="button" id="submit" value="Search...">
+
+</form>
+</body>
+</html>
