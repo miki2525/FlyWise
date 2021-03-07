@@ -1,31 +1,22 @@
 package com.MikolajKalata.FlyWise.service;
 
-import com.MikolajKalata.FlyWise.model.Baggage;
-import com.MikolajKalata.FlyWise.model.Cargo;
-import com.MikolajKalata.FlyWise.model.Cargoes;
+
 import com.MikolajKalata.FlyWise.model.Flight;
-import com.MikolajKalata.FlyWise.repository.CargoRepository;
 import com.MikolajKalata.FlyWise.repository.FlightRepository;
 import org.springframework.stereotype.Service;
 
-import javax.persistence.criteria.CriteriaBuilder;
+
 import java.sql.Date;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.ZonedDateTime;
 import java.util.List;
-import java.util.Optional;
+
 
 @Service
 public class FlightService {
 
     private FlightRepository flightRepository;
 
-    private CargoRepository cargoRepository;
-
-    public FlightService(FlightRepository flightRepository, CargoRepository cargoRepository){
+    public FlightService(FlightRepository flightRepository){
         this.flightRepository = flightRepository;
-        this.cargoRepository = cargoRepository;
     }
 
     public List<Flight> findAll(){

@@ -43,7 +43,7 @@ public interface FlightRepository extends JpaRepository<Flight, Long> {
 
 
     /*/////////////////////////////////////////////////////////////////////////////////////////
-    If ArrivalDate would be known( =private ZonedDateTime arrivalDate field in model)
+    when ArrivalDate will be known( ="private ZonedDateTime arrivalDate" field in the Model)
 
     @Query("SELECT COUNT(f) FROM Flight f WHERE " +
             "f.arrivalAirportIATACode= :arrCode AND CAST(f.arrivalDate AS date) = :date")
