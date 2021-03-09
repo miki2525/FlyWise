@@ -14,6 +14,16 @@ public class AirportDetails {
         this.totalNumOfBaggArr = totalNumOfBaggArr;
     }
 
+    public static boolean validate(Long numOfFlightDep, Long numOfFlightArr, Long totalNumOfBaggDep, Long totalNumOfBaggArr){
+        if(numOfFlightDep == null ||
+                numOfFlightArr == null ||
+                totalNumOfBaggDep == null ||
+                totalNumOfBaggArr == null){
+            return false;
+        }
+        else { return true;}
+
+    }
     public Long getNumOfFlightDep() {
         return numOfFlightDep;
     }

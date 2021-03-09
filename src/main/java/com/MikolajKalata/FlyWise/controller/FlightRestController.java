@@ -1,6 +1,6 @@
 package com.MikolajKalata.FlyWise.controller;
 
-import com.MikolajKalata.FlyWise.model.Cargo;
+
 import com.MikolajKalata.FlyWise.model.Flight;
 import com.MikolajKalata.FlyWise.service.FlightService;
 import com.MikolajKalata.FlyWise.tools.AirportDetails;
@@ -9,9 +9,8 @@ import com.MikolajKalata.FlyWise.tools.Weights;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import javax.sql.rowset.CachedRowSet;
+
 import java.sql.Date;
-import java.time.LocalDate;
 import java.util.List;
 
 @RestController
@@ -54,6 +53,9 @@ public class FlightRestController {
         Long numOfPiecesDep = flightService.getNumOfPiecesDep(airCode, date);
         Long numOfPiecesArr = flightService.getNumOfPiecesArr(airCode, date);
 
+        if(AirportDetails.validate(numOfFlightsDep, numOfFlightsArr, numOfPiecesDep, numOfPiecesArr)){
+           return ResponseEntity.notFound().build();
+        }
         AirportDetails airportDetails = new AirportDetails(numOfFlightsDep, numOfFlightsArr, numOfPiecesDep, numOfPiecesArr);
 
         return ResponseEntity.ok(airportDetails);

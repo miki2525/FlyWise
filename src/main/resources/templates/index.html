@@ -1,21 +1,118 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
-<link rel="stylesheet" href="../static/css/style.css" th:href="@{/style.css}">
-<script src="../static/script.js" th:src="@{/script.js}"> </script>
+<link rel="stylesheet" href="../static/css/style.css" th:href="@{/css/style.css}">
+<script src="../static/js/jquery.js" th:src="@{/js/jquery.js}"></script>
+<script src="../static/js/script.js" th:src="@{/js/script.js}"> </script>
 <head>
     <meta charset="UTF-8">
     <title>FlyWise</title>
 </head>
 <body>
-<form>
+    
 
-    <label for="flightNum">Provide the Flight Number: </label>
-    <input type="text" id="flightNum">
-    <label for="dateStr">Select the flight date</label>
-    <input type="date" id="dateStr">
+    <div><img src="../static/img/sky.jpg" th:src="@{/img/sky.jpg}"></div>  
+    
+    <div class="background">
 
-    <input type="button" id="submit" value="Search...">
+        <div class="container">
+            
+            <div class="buttons">
+                <div class="0 button">WeightDetails</div>
+                <div class="1 button">AirportDetails</div>
+            </div>
+            
+            <div class="Welcome">
+                <p>Welcome to FlyWise! </p>
+                <p>Please choose the tab above and get the proper data.</p>
+            </div>
+            
+            
+            
+            <div class="0 text">
+                <p>In this section you will receive the data about: </p>
+                <p>Cargo Weight for requested Flight</p>
+                <p>Baggage Weight for requested Flight</p>
+                <p>Total Weight for requested Flight<p/>
+            </div>
+            
+            <div class="1 text">
+                <p>In this section you will receive the data about: </p>
+                <p>Number of flights departing from this airport</p>
+                <p>Number of flights arriving to this airport</p>
+                <p>Total number (pieces) of baggage arriving to this airport</p>
+                <p>Total number (pieces) of baggage departing from this airport</p>
 
-</form>
+            </div>
+            
+            <div class="0 form">
+                <form>
+                    
+                    <label>Provide the Flight Number: </label>
+                    <input type="text" id="flightNum">
+                    <label>Select the flight date: </label>
+                    <input type="date" id="dateStr" min="2014-00-01">
+
+                    <input type="button" id="submit0" value="Search">
+                     <label id="hint">Type e.g FlightNum from 1000 to 1005 + today date</label>
+                </form>
+            </div>
+            
+        
+            <div class="1 form">
+                <form>
+                    
+                    <label>Provide the IATA Airport Code: </label>
+                    <input type="text" id="airCode">
+                    <label>Select the date: </label>
+                    <input type="date" id="dateStr2" min="2014-00-01">
+
+                    <input type="button" id="submit1" value="Search">
+                    <label id="hint">Type e.g IATA "SEA" or "GDN" + today date</label>
+                </form>
+            </div>
+            
+            <div class="0 respond">
+                <div>
+                    <label>Your Flight Number: </label><label class="input">$$$</label>
+                    <label>Your flight date: </label><label class="input">$$$</label>
+                </div>
+                
+                <table class="table">
+                    <tr>
+                        <th>Cargo Weight:</th>
+                        <th>Baggage Weight:</th> 
+                        <th>Total Weight:</th>
+                    </tr>
+                    <tr class="col">
+                        <td>$$$</td>    
+                        <td>$$$</td>    
+                        <td>$$$</td>
+                    </tr>
+                </table>
+            </div>
+            
+            <div class="1 respond">
+                <div>
+                    <label>Your IATA Airport Code: </label><label class="input">$$$</label>
+                    <label>Your date: </label><label class="input">$$$</label>
+                </div>
+                
+                <table class="table">
+                    <tr>
+                        <th>Number of flights departing</th> 
+                        <th>Total number of baggage departing from this airport (pieces) </th> <th>Number of flights arriving to this airport</th> 
+                        <th>Total number (pieces) of baggage arriving to this airport</th>
+                    </tr>
+                    <tr class="col">
+                        <td>$$$</td>   
+                        <td>$$$</td>   
+                        <td>$$$</td>
+                        <td>$$$</td>    
+                    </tr>
+                </table>
+        </div>
+    </div>
+</div>
+        
 </body>
 </html>
