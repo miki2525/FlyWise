@@ -32,20 +32,25 @@ window.onload = function () {
                 if (!checkRes(res)){
                     return alert("Receiving data error, please try again")
                 }
-                $(".respond").eq(0).children().css("display", "flex");
-                $(".input").eq(0).html(flightNum);
-                $(".input").eq(1).html(dateStr);
-                $(".table").eq(0).css("display", "table");
-                $(".col").eq(0).children().eq(0).html(res.totalBaggage);
-                $(".col").eq(0).children().eq(1).html(res.totalCargo);
-                $(".col").eq(0).children().eq(2).html(res.totalWeight);
+                $(".overlay").css("display", "block");
+                setTimeout(function () {
+                    $(".respond").eq(0).children().css("display", "flex");
+                    $(".input").eq(0).html(flightNum);
+                    $(".input").eq(1).html(dateStr);
+                    $(".table").eq(0).css("display", "table");
+                    $(".col").eq(0).children().eq(0).html(res.totalBaggage);
+                    $(".col").eq(0).children().eq(1).html(res.totalCargo);
+                    $(".col").eq(0).children().eq(2).html(res.totalWeight);
+                    $(".overlay").css("display", "none");
+                }, 2000);
 
             }
             else if (this.status == 404){
+                $(".overlay").css("display", "none");
                 return alert("Not found in DB!")
             }
             else {
-                console.log("WAITNG....")
+                $(".overlay").css("display", "block");
             }
         }
 
@@ -72,21 +77,25 @@ window.onload = function () {
                 if (!checkRes(res)){
                     return alert("Receiving data error, please try again")
                 }
-                $(".respond").eq(1).children().css("display", "flex");
-                $(".input").eq(2).html(airCode);
-                $(".input").eq(3).html(dateStr);
-                $(".table").eq(1).css("display", "table");
-                $(".col").eq(1).children().eq(0).html(res.numOfFlightDep);
-                $(".col").eq(1).children().eq(1).html(res.totalNumOfBaggDep);
-                $(".col").eq(1).children().eq(2).html(res.numOfFlightArr);
-                $(".col").eq(1).children().eq(3).html(res.totalNumOfBaggArr);
-
+                $(".overlay").css("display", "block");
+                setTimeout(function () {
+                    $(".respond").eq(1).children().css("display", "flex");
+                    $(".input").eq(2).html(airCode);
+                    $(".input").eq(3).html(dateStr);
+                    $(".table").eq(1).css("display", "table");
+                    $(".col").eq(1).children().eq(0).html(res.numOfFlightDep);
+                    $(".col").eq(1).children().eq(1).html(res.totalNumOfBaggDep);
+                    $(".col").eq(1).children().eq(2).html(res.numOfFlightArr);
+                    $(".col").eq(1).children().eq(3).html(res.totalNumOfBaggArr);
+                    $(".overlay").css("display", "none");
+                }, 200);
             }
             else if (this.status == 404){
+                $(".overlay").css("display", "none");
                 return alert("Not found in DB!")
             }
             else {
-                console.log("WAITNG....")
+                $(".overlay").css("display", "block");
             }
         }
     }

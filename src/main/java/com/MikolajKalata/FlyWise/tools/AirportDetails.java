@@ -21,6 +21,9 @@ public class AirportDetails {
                 totalNumOfBaggArr == null){
             return false;
         }
+        else if(numOfFlightArr == 0L && numOfFlightDep == 0L && totalNumOfBaggArr == 0 && totalNumOfBaggDep == 0){
+            return false;
+        }
         else { return true;}
 
     }
