@@ -53,7 +53,7 @@ public class FlightRestController {
         Long numOfPiecesDep = flightService.getNumOfPiecesDep(airCode, date);
         Long numOfPiecesArr = flightService.getNumOfPiecesArr(airCode, date);
 
-        if(AirportDetails.validate(numOfFlightsDep, numOfFlightsArr, numOfPiecesDep, numOfPiecesArr)){
+        if(!AirportDetails.validate(numOfFlightsDep, numOfFlightsArr, numOfPiecesDep, numOfPiecesArr)){
            return ResponseEntity.notFound().build();
         }
         AirportDetails airportDetails = new AirportDetails(numOfFlightsDep, numOfFlightsArr, numOfPiecesDep, numOfPiecesArr);
