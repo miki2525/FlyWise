@@ -4,6 +4,7 @@ overflow: hidden;
 
 }
 
+
 .overlay{
     opacity: 0.5;
     background-color:black;
@@ -164,6 +165,12 @@ input[type=date]:focus, input[type=text]:focus{
     font-size: 10px;
 }
 
+.notFound{
+    display: none;
+    font-weight: bold;
+    color: red;
+    text-align: center;
+}
 .respond{
     margin-top: 10px;
 }
@@ -226,3 +233,236 @@ margin-left: 0px;
     #hint{
         font-size: 9px;
     }
+    
+@media screen and (max-width: 910px){
+  body{
+    background-color: lightcyan;
+overflow: hidden;
+
+}
+
+
+.overlay{
+    opacity: 0.5;
+    background-color:black;
+    position:fixed;
+    width:100%;
+    height:100%;
+    top:0px;
+    left:0px;
+    display: none;
+}
+
+.loader {
+
+    margin-left: 40%;
+    margin-top: 10%;
+  border: 25px solid darkviolet;
+  border-radius: 50%;
+  border-top: 20px solid yellow;
+  width: 150px;
+  height: 120px;
+  -webkit-animation: spin 1.5s linear infinite;
+  animation: spin 1.5s linear infinite;
+}
+@keyframes spin {
+  40% { transform: rotate(-360deg); }
+  100% { transform: rotate(360deg); }
+}
+
+img{
+    margin-top: -1.5%;
+    margin-left: -0.5%;
+    width: 100%;
+    position: absolute;
+    z-index: -1;
+}
+
+.background{
+    background-color: whitesmoke;
+    margin: auto;
+    margin-top: 20px;
+    width: 50%;
+    border: 1px solid darkviolet;
+    border-radius: 10px;
+    padding: 0px 10px 400px 10px;
+    }
+
+
+.Welcome{
+    font-size: 20px;
+}
+
+.Welcome p:nth-child(1){
+    font-weight: bold;
+}
+
+.buttons{
+    width: 100%;
+    padding-bottom: 1px;
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 2px solid black;
+}
+
+.button{
+    width: 10%;
+    color: white;
+    background-color: darkviolet;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+    transition: transform 0.5s;
+    transition-timing-function: ease;
+    padding: 5px 100px;
+}
+
+.button:hover{
+        opacity: 0.6;
+}
+
+.on{
+    color: white;
+    font-weight: bold;
+    cursor: default;
+    background-color : mediumvioletred;
+    transform: translateY(-7px);
+    box-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+}
+
+.on:hover{
+    opacity: 1;
+}
+
+.text{
+    padding-bottom: 3px;
+    border-bottom: 2px solid black;
+    margin-bottom: 5px;
+}
+
+.text p:not(:first-child){
+    font-weight: bold;
+}
+
+input[type=date], input[type=text]{    
+    width: 20%;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+    box-shadow: 1px 2px 2px 2px darkviolet;
+}
+
+input::-webkit-calendar-picker-indicator, -moz-appearance {
+    cursor: pointer;
+  }
+
+input[type=date]:focus, input[type=text]:focus{
+    background-color: darkviolet;
+    color: white;
+    font-weight: bold;
+}
+    
+.form input[type=button] {
+    text-align: left;
+    width: 17%;
+    background-color: darkviolet;
+    color: white;
+    padding: 5px;
+    margin: 15px 0px 10px 0px;
+    border: 0;
+    cursor: pointer;
+    border: 4px solid black;
+    border-radius: 50%;
+    text-align: center;
+    outline: none;
+}
+
+.form input[type=button]:hover {
+    opacity: 0.6;
+     box-shadow: 1px 1px 2px black, 0 0 15px blue, 0 0 5px darkblue;
+}
+
+.form input[type=button]:active {
+    
+     transform: translateY(2px);
+   
+}
+
+.text{
+    display: none;
+}
+
+.form{
+    display: none;       
+    border-bottom: 2px solid black;
+    padding-bottom: 5px;
+}
+
+#hint{
+    font-size: 10px;
+}
+
+.notFound{
+    display: none;
+    font-weight: bold;
+    color: red;
+    text-align: center;
+}
+.respond{
+    margin-top: 10px;
+}
+
+.respond div{
+    display: none;
+    justify-content: space-around;
+    padding-bottom: 10px;
+    font-size: 20px;
+}
+
+.input{
+    font-weight: bold;
+    font-size: 25px;
+}
+
+
+.table{
+    display: none;
+    box-shadow: 1px 1px 2px black, 0 0 15px blue, 0 0 5px darkblue;
+    width: 100%;
+cursor: default;
+    margin-top: 20px;
+    transition: width 20s;
+    transition-timing-function: ease-in-out;
+}
+
+table,tr, td, th{
+    border: 4px solid black;
+    
+}
+
+th{
+    background-color: darkviolet;
+    color: white;
+    
+}
+
+tr td{
+    font-weight: bold;
+    text-align: center;
+    font-size: 20px;
+}
+
+@media screen and (max-width: 1110px){
+    input[type=date], label {
+        margin-top: 10px;
+        display: flex;
+    }
+    input[type=date], input[type=text]{
+        width: 100%;
+    }
+    #hint{
+     display: flex; 
+}
+    #hint{
+     display: flex; 
+}

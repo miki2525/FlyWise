@@ -45,10 +45,13 @@ window.onload = function () {
                 }, 2000);
 
             }
-            else if (this.status == 404){
+            else if (this.status == 404) {
                 $(".overlay").css("display", "none");
-                return alert("Not found in DB!")
-            }
+                $(".notFound").eq(0).css("display", "block");
+                setTimeout(function (){
+                    $(".notFound").eq(0).css("display", "none");
+                }, 2000);
+                            }
             else {
                 $(".overlay").css("display", "block");
             }
@@ -92,7 +95,10 @@ window.onload = function () {
             }
             else if (this.status == 404){
                 $(".overlay").css("display", "none");
-                return alert("Not found in DB!")
+                $(".notFound").eq(1).css("display", "block");
+                setTimeout(function (){
+                    $(".notFound").eq(1).css("display", "none");
+                }, 2000);
             }
             else {
                 $(".overlay").css("display", "block");
@@ -155,3 +161,23 @@ window.onload = function () {
 
 }
 
+
+@media screen and (max-width: 1000px){
+    body{
+    }
+.background{
+        padding-bottom: 200px;
+    }
+
+.text{
+        font-size: 12px
+    }
+
+.form{
+        font-size: 12px;
+        margin-left: 0px;
+    }
+    #hint{
+        font-size: 9px;
+    }
+    
