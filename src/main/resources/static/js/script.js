@@ -162,22 +162,3 @@ window.onload = function () {
 }
 
 
-@media screen and (max-width: 1000px){
-    body{
-    }
-.background{
-        padding-bottom: 200px;
-    }
-
-.text{
-        font-size: 12px
-    }
-
-.form{
-        font-size: 12px;
-        margin-left: 0px;
-    }
-    #hint{
-        font-size: 9px;
-    }
-    
