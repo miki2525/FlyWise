@@ -12,7 +12,6 @@ public class WeightCalculator{
     public static Integer getBaggageTotalWeight(List<Baggage> baggageList) {
             Integer baggageTotal = 0;
         for (Baggage baggageTemp : baggageList){
-
             if (baggageTemp.getWeightUnit().equals("lb")){
                 baggageTemp.setWeight(WeightConverter.lbsToKgs(baggageTemp.getWeight()));    //////kg is a default unit
             }
