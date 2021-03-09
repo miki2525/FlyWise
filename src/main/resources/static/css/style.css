@@ -451,8 +451,26 @@ tr td{
     text-align: center;
     font-size: 20px;
 }
+@media screen and (max-width: 1100px){
+    body{
+    }
+.background{
+        padding-bottom: 200px;
+    }
 
-@media screen and (max-width: 1110px){
+.text{
+        font-size: 15px;
+    }
+
+.form{
+        font-size: 12px;
+        margin-left: 0px;
+    }
+    #hint{
+        font-size: 9px;
+    }
+    @media (max-width:900px) and (min-width:400px)
+{
     input[type=date], label {
         margin-top: 10px;
         display: flex;
@@ -466,3 +484,4 @@ tr td{
     #hint{
      display: flex; 
 }
+    }
