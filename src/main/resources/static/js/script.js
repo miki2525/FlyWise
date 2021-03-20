@@ -112,10 +112,10 @@ window.onload = function () {
         $(".text").eq(index).show("slow");
         $(".form").eq(index).slideDown("slow");
         switch (index) {
-            case 0: $("#submit0").click(getWeightDetails);
+            case 0: $("#submit0").unbind().click(getWeightDetails);
             break;
 
-            case 1: $("#submit1").click(getAirportDetails);
+            case 1: $("#submit1").unbind().click(getAirportDetails);
             break;
         }
     }
@@ -142,7 +142,7 @@ window.onload = function () {
         if(!Num.test(in1)){
             return false;
         }
-        if(in2 == "" || in2 == null){
+        if(in2 == ""){
             return false;
         }
         return true;
@@ -153,7 +153,7 @@ window.onload = function () {
         if(!Num.test(in1)){
             return false;
         }
-        if(in2 == "" || in2 == null){
+        if(in2 == ""){
             return false;
         }
         return true;
