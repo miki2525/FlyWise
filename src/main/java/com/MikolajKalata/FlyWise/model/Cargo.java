@@ -1,6 +1,7 @@
 package com.MikolajKalata.FlyWise.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 
 import javax.persistence.*;
@@ -9,13 +10,16 @@ import java.util.List;
 import java.util.Objects;
 
 @Entity
+
 public class Cargo {
 
     @Id
     private Long flightId;
 
+
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "cargo")
     private List<Baggage> baggage = new ArrayList<>();
+
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "cargo")
     private List<Cargoes> cargo = new ArrayList<>();
@@ -81,5 +85,13 @@ public class Cargo {
     @Override
     public int hashCode() {
         return Objects.hash(flightId, baggage, cargo);
+    }
+
+    @Override
+    public String toString() {
+        return "Cargo{" +
+                "flightId=" + flightId +
+                ", flight=" + flight +
+                '}';
     }
 }

@@ -6,10 +6,11 @@ import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
+@SequenceGenerator(name = "seq", initialValue = 0)
 public class Baggage {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq")
     private Long id;
 
     private Integer weight;
@@ -18,7 +19,7 @@ public class Baggage {
 
     private Integer pieces;
 
-    @JoinColumn(name = "cargo_flightId", nullable = false)
+    @JoinColumn(name = "cargo_flightId")
     @ManyToOne
     @JsonIgnore
     private Cargo cargo;
@@ -84,5 +85,16 @@ public class Baggage {
     @Override
     public int hashCode() {
         return Objects.hash(id, weight*7, weightUnit, pieces*11);
+    }
+
+    @Override
+    public String toString() {
+        return "Baggage{" +
+                "id=" + id +
+                ", weight=" + weight +
+                ", weightUnit='" + weightUnit + '\'' +
+                ", pieces=" + pieces +
+                ", cargo=" + cargo +
+                '}';
     }
 }

@@ -1,6 +1,10 @@
 package com.MikolajKalata.FlyWise.model;
 
+import com.MikolajKalata.FlyWise.tools.ZonedDateTimeDeserializer;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
@@ -10,10 +14,11 @@ import java.time.ZonedDateTime;
 import java.util.Objects;
 
 @Entity
+@SequenceGenerator(name = "seq", initialValue = 0)
 public class Flight {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq")
     private Long flightId;
 
     private Integer flightNumber;
@@ -22,6 +27,7 @@ public class Flight {
 
     private String arrivalAirportIATACode;
 
+    @JsonDeserialize(using = ZonedDateTimeDeserializer.class)
     private ZonedDateTime departureDate;
 
 //    private ZonedDateTime arrivalDate;

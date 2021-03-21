@@ -27,8 +27,11 @@ public class FlightService {
         flightRepository.deleteAll();
     }
 
-    public Flight saveFlight(Flight flight){
-        return flightRepository.save(flight);
+    public Flight saveFlight(Flight flight){ return flightRepository.save(flight);
+    }
+
+    public List<Flight> saveFlights(List<Flight> flights){
+        return flightRepository.saveAll(flights);
     }
 
     public Flight getWeightDetails(Integer flightNum, Date date){
