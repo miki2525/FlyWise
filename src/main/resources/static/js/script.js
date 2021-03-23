@@ -138,7 +138,7 @@ window.onload = function () {
     }
 
     function validateWeightsInput(in1, in2){
-        const Num = /^([0-9]{4})$/;
+        const Num = /^([0-9]{3,4})$/;
         if(!Num.test(in1)){
             return false;
         }
