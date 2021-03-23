@@ -6,11 +6,15 @@ import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
-@SequenceGenerator(name = "seq", initialValue = 0)
+//@SequenceGenerator(name = "seq2", initialValue = 0)
 public class Baggage {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq")
+    //    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq2")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long baggageId;
+
+
     private Long id;
 
     private Integer weight;
@@ -33,6 +37,7 @@ public class Baggage {
         this.pieces = pieces;
         this.cargo = cargo;
     }
+
 
     public Long getId() {
         return id;

@@ -33,19 +33,21 @@
 //    @Override
 //    public void run(ApplicationArguments args) throws Exception {
 //        int num = 1000;
+//        long w0 = 0l;
 //        int w1 = 25;
 //        int w2 = 155;
 //        int w3 = 255;
 //        int w4 = 5;
 //
 //        for (int i = 0; i < 5; i++) {
+//            w0 = 0l;
 //            Flight flight = new Flight(num++, "SEA", "GDN", ZonedDateTime.now());
 //            Cargo cargo = new Cargo();
-//            cargo.getCargoes().add(new Cargoes(w1++, "kg", w2++, cargo));
-//            cargo.getCargoes().add(new Cargoes(w3++, "lb", w2++, cargo));
-//            cargo.getBaggage().add(new Baggage(w2++, "lb", w4++, cargo));
-//            cargo.getBaggage().add(new Baggage(w3++, "lb", w1++, cargo));
-//            cargo.getBaggage().add(new Baggage(w4++, "kg", w3++, cargo));
+//            cargo.getCargoes().add(new Cargoes(w0++, w1++, "kg", w2++, cargo));
+//            cargo.getCargoes().add(new Cargoes(w0++, w3++, "lb", w2++, cargo));
+//            cargo.getBaggage().add(new Baggage(w0++, w2++, "lb", w4++, cargo));
+//            cargo.getBaggage().add(new Baggage(w0++, w3++, "lb", w1++, cargo));
+//            cargo.getBaggage().add(new Baggage(w0++, w4++, "kg", w3++, cargo));
 //            cargo.setFlight(flight);
 //            flight.setCargo(cargo);
 //            flightRepository.save(flight);
@@ -56,6 +58,7 @@
 //        String[] unitArr = {"kg", "lb"};
 //        List<Cargo> cargoList = new ArrayList<>();
 //        List<Flight> flightList = new ArrayList<>();
+//        long id;
 //        Double randomNumFl;
 //        Double randomUnit;
 //        Double randomBag;
@@ -88,22 +91,24 @@
 //            flightList.add(new Flight(randomNumFl.intValue(), depCode, arrCode, date));
 //            cargoList.add(new Cargo());
 //
+//            id = 0l;
 //            for(int j = 0; j < randomBag; j++) {
 //                weight = Math.random() * (999 - 1 + 1) + 1;
 //                pieces =  Math.random() * (999 - 1 + 1) + 1;
 //                randomUnit =  Math.random() * (1 - 0 + 1) + 0;
 //
 //                unit = (String) Array.get(unitArr, randomUnit.intValue());
-//                cargoList.get(i).getBaggage().add(new Baggage(weight.intValue(), unit, pieces.intValue(), cargoList.get(i)));
+//                cargoList.get(i).getBaggage().add(new Baggage(id++, weight.intValue(), unit, pieces.intValue(), cargoList.get(i)));
 //            }
 //
+//            id = 0l;
 //            for(int k = 0; k < randomCar; k++) {
 //                weight = Math.random() * (999 - 1 + 1) + 1;
 //                pieces = Math.random() * (999 - 1 + 1) + 1;
 //                randomUnit = Math.random() * (1 - 0 + 1) + 0;
 //                unit = (String) Array.get(unitArr, randomUnit.intValue());
 //
-//                cargoList.get(i).getCargoes().add(new Cargoes(weight.intValue(), unit, pieces.intValue(), cargoList.get(i)));
+//                cargoList.get(i).getCargoes().add(new Cargoes(id++, weight.intValue(), unit, pieces.intValue(), cargoList.get(i)));
 //            }
 //
 //            cargoList.get(i).setFlight(flightList.get(i));

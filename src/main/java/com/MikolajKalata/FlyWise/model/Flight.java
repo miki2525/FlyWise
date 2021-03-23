@@ -15,6 +15,7 @@ import java.util.Objects;
 
 @Entity
 @SequenceGenerator(name = "seq", initialValue = 0)
+
 public class Flight {
 
     @Id
